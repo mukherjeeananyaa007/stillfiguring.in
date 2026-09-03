@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Inter, Source_Serif_4 } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { SiteFooter } from '@/components/site-footer';
@@ -33,17 +32,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sourceSerif.variable} ${inter.variable}`}>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RRYDP8R03H"
-          strategy="beforeInteractive"
-        />
-        <Script id="google-analytics" strategy="beforeInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-window.gtag = function gtag(){window.dataLayer.push(arguments);};
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRYDP8R03H" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-RRYDP8R03H');`}
-        </Script>
+gtag('config', 'G-RRYDP8R03H');`,
+          }}
+        />
+      </head>
+      <body className={`${sourceSerif.variable} ${inter.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />
           {children}
