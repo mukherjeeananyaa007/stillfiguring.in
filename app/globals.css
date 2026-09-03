@@ -95,9 +95,12 @@
   }
 
   .article-body,
+  .article-body :where(ul, ol),
   .article-body :where(p),
   .article-body :where(li),
   .article-body :where(strong),
+  .article-body :where(em),
+  .article-body :where(code),
   .article-body :where(h2, h3, h4),
   .article-body :where(blockquote) {
     color: rgb(var(--ink)) !important;
