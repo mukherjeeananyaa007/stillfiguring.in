@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -14,8 +15,9 @@ export function SiteHeader() {
   return (
     <header className="border-b border-[rgb(var(--line))]">
       <div className="page-shell flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="font-serif text-2xl font-medium tracking-tight">
-          Still Figuring<span className="text-accent">.</span>
+        <Link href="/" aria-label="Still Figuring home" className="flex items-center gap-3 font-serif text-2xl font-medium tracking-tight">
+          <Image src="/images/editorial-minimal-symbol-mark.png" alt="" width={40} height={40} priority className="size-10 object-contain" />
+          <span>Still Figuring<span className="text-accent">.</span></span>
         </Link>
         <nav aria-label="Main navigation" className="flex items-center gap-5 text-sm text-[rgb(var(--ink-muted))] sm:gap-8">
           <Link className="transition-colors hover:text-[rgb(var(--ink))]" href="/articles">Articles</Link>
