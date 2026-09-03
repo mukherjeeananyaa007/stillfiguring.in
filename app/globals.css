@@ -76,7 +76,7 @@
   }
 
   .prose {
-    --tw-prose-body: rgb(var(--ink-muted));
+    --tw-prose-body: rgb(var(--ink));
     --tw-prose-headings: rgb(var(--ink));
     --tw-prose-lead: rgb(var(--ink-muted));
     --tw-prose-links: rgb(var(--accent));
