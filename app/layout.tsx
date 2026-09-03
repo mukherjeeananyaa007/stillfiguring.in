@@ -36,11 +36,11 @@ export default function RootLayout({
       <body className={`${sourceSerif.variable} ${inter.variable}`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RRYDP8R03H"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+window.gtag = function gtag(){window.dataLayer.push(arguments);};
 gtag('js', new Date());
 gtag('config', 'G-RRYDP8R03H');`}
         </Script>
