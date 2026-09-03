@@ -93,6 +93,23 @@
     --tw-prose-th-borders: rgb(var(--line));
     --tw-prose-td-borders: rgb(var(--line));
   }
+
+  .article-body,
+  .article-body :where(p),
+  .article-body :where(li),
+  .article-body :where(strong),
+  .article-body :where(h2, h3, h4),
+  .article-body :where(blockquote) {
+    color: rgb(var(--ink)) !important;
+  }
+
+  .article-body :where(a) {
+    color: rgb(var(--accent)) !important;
+  }
+
+  .article-body :where(hr) {
+    border-color: rgb(var(--line)) !important;
+  }
 }
 
 @media (min-width: 640px) {
