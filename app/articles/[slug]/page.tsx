@@ -35,7 +35,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         <figure className="mt-10 overflow-hidden bg-[rgb(var(--paper-raised))]">
           <img src={article.image} alt={article.imageAlt} className="aspect-[16/9] h-auto w-full object-cover" width={1200} height={675} />
         </figure>
-      <article className="prose prose-lg mt-12">{content}</article>
+      <article className="prose prose-lg mt-12 dark:prose-invert">{content}</article>
     </main>
   );
 }

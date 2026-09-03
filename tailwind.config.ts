@@ -21,10 +21,28 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
-            color: '#242321',
             maxWidth: '70ch',
             lineHeight: '1.85',
-            a: { color: '#b85c38' },
+          },
+        },
+        invert: {
+          css: {
+            '--tw-prose-body': 'rgb(var(--ink))',
+            '--tw-prose-headings': 'rgb(var(--ink))',
+            '--tw-prose-lead': 'rgb(var(--ink-muted))',
+            '--tw-prose-links': 'rgb(var(--accent))',
+            '--tw-prose-bold': 'rgb(var(--ink))',
+            '--tw-prose-counters': 'rgb(var(--ink-muted))',
+            '--tw-prose-bullets': 'rgb(var(--accent))',
+            '--tw-prose-hr': 'rgb(var(--line))',
+            '--tw-prose-quotes': 'rgb(var(--ink))',
+            '--tw-prose-quote-borders': 'rgb(var(--accent))',
+            '--tw-prose-captions': 'rgb(var(--ink-muted))',
+            '--tw-prose-code': 'rgb(var(--ink))',
+            '--tw-prose-pre-code': 'rgb(var(--ink))',
+            '--tw-prose-pre-bg': 'rgb(var(--paper-raised))',
+            '--tw-prose-th-borders': 'rgb(var(--line))',
+            '--tw-prose-td-borders': 'rgb(var(--line))',
           },
         },
       },
