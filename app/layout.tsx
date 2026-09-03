@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Source_Serif_4 } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { SiteFooter } from '@/components/site-footer';
@@ -33,6 +34,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${sourceSerif.variable} ${inter.variable}`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RRYDP8R03H"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RRYDP8R03H');`}
+        </Script>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />
           {children}
