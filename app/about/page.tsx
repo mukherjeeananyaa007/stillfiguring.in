@@ -3,10 +3,10 @@ export const metadata = { title: 'About' };
 export default function AboutPage() {
   return (
     <main className="page-shell py-16 sm:py-24">
-      <div className="reading-width">
+      <div className="mx-0 w-full max-w-3xl text-left">
         <p className="eyebrow">A small manifesto</p>
         <h1 className="mt-4 text-5xl leading-none sm:text-6xl">About Still Figuring</h1>
-        <div className="article-body prose prose-lg mt-12">
+        <div className="article-body prose prose-lg mt-12 max-w-none text-left">
           <p>There&apos;s a strange point in life where you&apos;ve done enough things &ldquo;right&rdquo; that you&apos;re expected to know what comes next.</p>
           <p>You have the degree.<br />The job.<br />The relationship.<br />The plans.<br />Maybe even the apartment and the savings account.</p>
           <p>And yet, somehow, you&apos;re still figuring it out.</p>
