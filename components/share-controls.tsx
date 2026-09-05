@@ -33,7 +33,7 @@ export function ShareControls({ title, url }: ShareControlsProps) {
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(url);
-      setStatus('Link copied');
+      setStatus('Copied');
     } catch {
       setStatus('Copy failed');
     }
@@ -41,6 +41,18 @@ export function ShareControls({ title, url }: ShareControlsProps) {
 
   async function shareToInstagram() {
     await copyLink();
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, text: title, url });
+        return;
+      } catch (error) {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          return;
+        }
+      }
+    }
+
     openAppFirst('instagram://app', 'https://www.instagram.com/');
   }
 
@@ -60,7 +72,7 @@ export function ShareControls({ title, url }: ShareControlsProps) {
         </button>
         <button
           type="button"
-          onClick={() => openAppFirst(`linkedin://shareArticle?url=${encodedUrl}`, `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`)}
+          onClick={() => openAppFirst(`linkedin://shareArticle?mini=true&url=${encodedUrl}&title=${encodeURIComponent(title)}`, `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`)}
           className="share-button"
           aria-label="Share on LinkedIn"
           title="Share on LinkedIn"
@@ -82,7 +94,7 @@ export function ShareControls({ title, url }: ShareControlsProps) {
           <Link2 size={16} aria-hidden="true" />
           <span>Copy link</span>
         </button>
-        <span className="sr-only" aria-live="polite">{status}</span>
+        {status && <span className="text-sm text-[rgb(var(--accent))]" aria-live="polite">{status}</span>}
       </div>
     </div>
   );
