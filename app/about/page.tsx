@@ -21,6 +21,11 @@ export default function AboutPage() {
           <p>Because maybe the goal was never to have it all figured out.</p>
           <p><strong><em>Maybe the goal is to keep figuring it out &mdash; on your own terms.</em></strong></p>
           <p>&mdash; <strong>Ananya</strong></p>
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href="https://www.instagram.com/miss.mukherjeee/" target="_blank" rel="noreferrer" className="text-accent underline decoration-accent-soft underline-offset-4 hover:decoration-accent">Instagram</a>
+            <a href="https://www.linkedin.com/in/ananya-mukherjee-9066251a9/" target="_blank" rel="noreferrer" className="text-accent underline decoration-accent-soft underline-offset-4 hover:decoration-accent">LinkedIn</a>
+            <a href="mailto:mukherjee.ananyaa@gmail.com" className="text-accent underline decoration-accent-soft underline-offset-4 hover:decoration-accent">Email</a>
+          </div>
         </div>
       </div>
     </main>
