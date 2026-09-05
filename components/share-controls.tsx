@@ -39,21 +39,9 @@ export function ShareControls({ title, url }: ShareControlsProps) {
     }
   }
 
-  async function shareToInstagram() {
+  async function shareToInstagramStory() {
     await copyLink();
-
-    if (navigator.share) {
-      try {
-        await navigator.share({ title, text: title, url });
-        return;
-      } catch (error) {
-        if (error instanceof DOMException && error.name === 'AbortError') {
-          return;
-        }
-      }
-    }
-
-    openAppFirst('instagram://app', 'https://www.instagram.com/');
+    openAppFirst('instagram://story-camera', 'https://www.instagram.com/');
   }
 
   return (
@@ -74,21 +62,21 @@ export function ShareControls({ title, url }: ShareControlsProps) {
           type="button"
           onClick={() => openAppFirst(`linkedin://shareArticle?mini=true&url=${encodedUrl}&title=${encodeURIComponent(title)}`, `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`)}
           className="share-button"
-          aria-label="Share on LinkedIn"
-          title="Share on LinkedIn"
+          aria-label="Share as a LinkedIn status"
+          title="Share as a LinkedIn status"
         >
           <Linkedin size={16} aria-hidden="true" />
-          <span>LinkedIn</span>
+          <span>LinkedIn status</span>
         </button>
         <button
           type="button"
-          onClick={shareToInstagram}
+          onClick={shareToInstagramStory}
           className="share-button"
-          aria-label="Share on Instagram"
-          title="Share on Instagram"
+          aria-label="Share to Instagram Story"
+          title="Share to Instagram Story"
         >
           <Instagram size={16} aria-hidden="true" />
-          <span>Instagram</span>
+          <span>Instagram Story</span>
         </button>
         <button type="button" onClick={copyLink} className="share-button" aria-label="Copy article link" title="Copy article link">
           <Link2 size={16} aria-hidden="true" />
