@@ -18,11 +18,39 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.stillfiguring.in'),
   title: {
     default: 'Still Figuring',
     template: '%s | Still Figuring',
   },
   description: 'Thoughtful writing for lives still in progress.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
+  openGraph: {
+    title: 'Still Figuring',
+    description: 'Thoughtful writing for lives still in progress.',
+    url: 'https://www.stillfiguring.in',
+    siteName: 'Still Figuring',
+    images: [
+      {
+        url: '/icon.png',
+        width: 1200,
+        height: 1200,
+        alt: 'Still Figuring logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Still Figuring',
+    description: 'Thoughtful writing for lives still in progress.',
+    images: ['/icon.png'],
+  },
 };
 
 export default function RootLayout({
