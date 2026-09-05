@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { getAllArticles, getArticleBySlug } from '@/lib/articles';
+import { ShareControls } from '@/components/share-controls';
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(date));
@@ -82,11 +83,12 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <img src={article.image} alt={article.imageAlt} className="aspect-[16/9] h-auto w-full object-cover" width={1200} height={675} />
         </figure>
       <article className="article-body prose prose-lg mt-12">{content}</article>
+      <ShareControls title={article.title} url={`https://www.stillfiguring.in/articles/${article.slug}`} />
 
       {relatedArticles.length > 0 && (
-        <aside className="mt-16 border-t border-[rgb(var(--line))] pt-10">
+        <aside className="mt-12 pt-2">
           <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="text-2xl sm:text-3xl">Related essays</h2>
+            <h2 className="text-2xl sm:text-3xl">If this resonated, you might also like</h2>
             <a href="/articles" className="text-sm text-accent underline decoration-accent-soft underline-offset-4 hover:decoration-accent">See all</a>
           </div>
 

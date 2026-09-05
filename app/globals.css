@@ -75,6 +75,25 @@
     text-transform: uppercase;
   }
 
+  .share-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgb(var(--line));
+    padding: 0.45rem 0.65rem;
+    color: rgb(var(--ink-muted));
+    font-size: 0.8rem;
+    transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+  }
+
+  .share-button:hover,
+  .share-button:focus-visible {
+    border-color: rgb(var(--accent));
+    background: rgb(var(--accent-soft));
+    color: rgb(var(--ink));
+    outline: none;
+  }
+
   .prose {
     --tw-prose-body: rgb(var(--ink));
     --tw-prose-headings: rgb(var(--ink));
