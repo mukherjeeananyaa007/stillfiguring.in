@@ -14,7 +14,23 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = await getArticleBySlug(params.slug);
-  return article ? { title: article.title, description: article.excerpt } : {};
+
+  if (!article) {
+    return {};
+  }
+
+  const title = article.metaTitle ?? article.title;
+  const description = article.metaDescription ?? article.excerpt;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: { params: { slug: string } }) {

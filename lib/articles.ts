@@ -10,6 +10,8 @@ export type ArticleFrontmatter = {
   date: string;
   author: string;
   excerpt: string;
+  metaTitle?: string;
+  metaDescription?: string;
   tags: string[];
   readingTime: string;
   image: string;
