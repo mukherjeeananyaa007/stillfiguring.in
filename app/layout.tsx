@@ -19,6 +19,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.stillfiguring.in'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: 'Still Figuring',
     template: '%s | Still Figuring',

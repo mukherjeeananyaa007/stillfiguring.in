@@ -22,13 +22,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const title = article.metaTitle ?? article.title;
   const description = article.metaDescription ?? article.excerpt;
+  const canonical = `/articles/${article.slug}`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title,
       description,
+      url: canonical,
       type: 'article',
       images: [
         {

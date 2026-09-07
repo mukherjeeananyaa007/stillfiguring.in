@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { ArticleCard } from '@/components/article-card';
 import { getAllArticles } from '@/lib/articles';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default async function HomePage() {
   const articles = await getAllArticles();

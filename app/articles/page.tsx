@@ -1,7 +1,11 @@
+import type { Metadata } from 'next';
 import { ArticleArchive } from '@/components/article-archive';
 import { getAllArticles } from '@/lib/articles';
 
-export const metadata = { title: 'Articles' };
+export const metadata: Metadata = {
+  title: 'Articles',
+  alternates: { canonical: '/articles' },
+};
 
 export default async function ArticlesPage() {
   const articles = await getAllArticles();
