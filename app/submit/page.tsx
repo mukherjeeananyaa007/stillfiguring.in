@@ -3,6 +3,7 @@ import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'Submit',
+  description: 'Share your essay with Still Figuring, a publication for thoughtful writing about lives still in progress.',
   alternates: { canonical: '/submit' },
 };
 

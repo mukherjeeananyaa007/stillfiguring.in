@@ -4,6 +4,8 @@ import { getAllArticles } from '@/lib/articles';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Still Figuring — Essays on Identity, Adulthood & Uncertain Twenties',
+  description: 'Essays, opinions, and observations about identity, adulthood, and the uncertain years when the map keeps changing.',
   alternates: { canonical: '/' },
 };
 

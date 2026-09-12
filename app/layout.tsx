@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   title: {
-    default: 'Still Figuring',
+    default: 'Still Figuring — Essays on Identity, Adulthood & Uncertain Twenties',
     template: '%s | Still Figuring',
   },
   description: 'Thoughtful writing for lives still in progress.',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'Still Figuring',
+    title: 'Still Figuring — Essays on Identity, Adulthood & Uncertain Twenties',
     description: 'Thoughtful writing for lives still in progress.',
     url: 'https://www.stillfiguring.in',
     siteName: 'Still Figuring',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Still Figuring',
+    title: 'Still Figuring — Essays on Identity, Adulthood & Uncertain Twenties',
     description: 'Thoughtful writing for lives still in progress.',
     images: ['/icon.png'],
   },
