@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 export function SiteHeader() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -29,23 +28,10 @@ export function SiteHeader() {
           </span>
           <span>Still Figuring<span className="text-accent">.</span></span>
         </Link>
-        <nav aria-label="Main navigation" className="flex items-center gap-3 text-sm text-[rgb(var(--ink-muted))] sm:gap-8">
-          <div id="mobile-navigation" className={`${menuOpen ? 'absolute inset-x-4 top-24 z-10 flex' : 'hidden'} flex-col gap-1 border border-[rgb(var(--line))] bg-[rgb(var(--paper))] p-3 shadow-lg sm:static sm:flex sm:flex-row sm:items-center sm:gap-8 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none`}>
-            <Link className="px-3 py-2 transition-colors hover:text-[rgb(var(--ink))] sm:px-0 sm:py-0" href="/articles" onClick={() => setMenuOpen(false)}>Articles</Link>
-            <Link className="px-3 py-2 transition-colors hover:text-[rgb(var(--ink))] sm:px-0 sm:py-0" href="/about" onClick={() => setMenuOpen(false)}>About</Link>
-            <Link className="px-3 py-2 transition-colors hover:text-[rgb(var(--ink))] sm:px-0 sm:py-0" href="/submit" onClick={() => setMenuOpen(false)}>Submit</Link>
-          </div>
-          <button
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            title={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="grid size-9 place-items-center border border-[rgb(var(--line))] text-[rgb(var(--ink))] transition-colors hover:border-accent hover:text-accent sm:hidden"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            {menuOpen ? <X size={17} strokeWidth={1.75} /> : <Menu size={17} strokeWidth={1.75} />}
-          </button>
+        <nav aria-label="Main navigation" className="flex items-center gap-5 text-sm text-[rgb(var(--ink-muted))] sm:gap-8">
+          <Link className="transition-colors hover:text-[rgb(var(--ink))]" href="/articles">Articles</Link>
+          <Link className="hidden transition-colors hover:text-[rgb(var(--ink))] sm:block" href="/about">About</Link>
+          <Link className="hidden transition-colors hover:text-[rgb(var(--ink))] sm:block" href="/submit">Submit</Link>
           <button
             type="button"
             aria-label="Toggle dark mode"
