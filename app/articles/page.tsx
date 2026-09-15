@@ -4,6 +4,7 @@ import { getAllArticles } from '@/lib/articles';
 
 export const metadata: Metadata = {
   title: 'Articles',
+  description: 'Long-form essays about work, identity, relationships, and finding your way through the strange middle of things.',
   alternates: { canonical: '/articles' },
 };
 
