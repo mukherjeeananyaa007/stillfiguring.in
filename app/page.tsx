@@ -4,6 +4,8 @@ import { getAllArticles } from '@/lib/articles';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Still Figuring — Essays on Identity, Adulthood & Uncertain Twenties',
+  description: 'Essays, opinions, and observations about identity, adulthood, and the uncertain years when the map keeps changing.',
   alternates: { canonical: '/' },
 };
 
@@ -22,7 +24,7 @@ export default async function HomePage() {
           <h2 id="latest-heading" className="text-3xl sm:text-4xl">Latest thinking</h2>
           <Link href="/articles" className="text-sm text-accent underline decoration-accent-soft underline-offset-4 hover:decoration-accent">View archive</Link>
         </div>
-        <div>{articles.slice(0, 5).map((article) => <ArticleCard key={article.slug} article={article} />)}</div>
+        <div>{articles.map((article) => <ArticleCard key={article.slug} article={article} />)}</div>
       </section>
     </main>
   );

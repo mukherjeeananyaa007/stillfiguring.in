@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   const title = article.metaTitle ?? article.title;
-  const description = article.metaDescription ?? article.excerpt;
+  const description = article.excerpt;
   const canonical = `/articles/${article.slug}`;
 
   return {
-    title,
+    title: article.metaTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical,
