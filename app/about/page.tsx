@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About',
+  description: 'Learn why Still Figuring exists: thoughtful writing for people making sense of identity, adulthood, work, and change.',
   alternates: { canonical: '/about' },
 };
 
