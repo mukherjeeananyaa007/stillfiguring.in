@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const canonical = `/articles/${article.slug}`;
 
   return {
-    title,
+    title: article.metaTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical,
